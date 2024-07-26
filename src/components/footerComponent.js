@@ -9,8 +9,8 @@ class footerCustom extends HTMLElement {
             <div class="container">
             <div class="row">
                 <div class="footer-text col-md-5 text-center text-md-start">
-                    <h3 class="fw-bold">EcoSync</h3><br>
-                    <p class="mt-3">Dengan fokus pada keberlanjutan dan inovasi, EcoSync memberikan pemahaman yang
+                    <h3 class="fw-bold">TraCo</h3><br>
+                    <p class="mt-3">Dengan fokus pada keberlanjutan dan inovasi, TraCo memberikan pemahaman yang
                         mendalam kepada pengguna tentang tantangan lingkungan saat ini. Platform ini tidak hanya
                         menggabungkan data, tetapi juga menyediakan solusi praktis untuk perbaikan ekosistem dan
                         pemantauan cuaca.
@@ -22,7 +22,7 @@ class footerCustom extends HTMLElement {
                         <div class="contact-details d-flex flex-column gap-1">
                             <div class="d-flex gap-3">
                                 <i class="fa fa-envelope" style="font-size:24px;"></i>
-                                <p>ecosync@gmail.com</p>
+                                <p>TraCo@gmail.com</p>
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-phone" style="font-size:24px"></i>
@@ -37,7 +37,7 @@ class footerCustom extends HTMLElement {
                         <div class="contact-details d-flex flex-column gap-1">
                             <div class="d-flex gap-3">
                                 <i class="fa fa-instagram" style="color: white; font-size:24px;"></i>
-                                <p>ecosync_official</p>
+                                <p>TraCo_official</p>
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-whatsapp" style="color: white; font-size:24px"></i>
@@ -45,7 +45,7 @@ class footerCustom extends HTMLElement {
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-youtube" style="color: white; font-size:24px"></i>
-                                <p>EcoSync_Official</p>
+                                <p>TraCo_Official</p>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ class footerCustom extends HTMLElement {
             <div class="row">
                 <!-- copyright -->
                 <div class="text-white footer-text">
-                    <p>&copy; 2021 EcoSync. All rights reserved.</p>
+                    <p>&copy; 2021 TraCo. All rights reserved.</p>
                 </div>
             </div>
     </footer>
