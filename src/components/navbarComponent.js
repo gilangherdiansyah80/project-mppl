@@ -6,7 +6,7 @@ class NavbarCustom extends HTMLElement {
 
   render() {
     this.innerHTML = `
-          <nav class="navbar navbar-expand-lg navbar-light">
+          <nav class="navbar navbar-expand-lg bg-primary">
             <div class="container-fluid px-lg-5">
               <a href="#" class="navbar-brand">
                 <img class="w-50" src="./image/logo.png" alt="...">

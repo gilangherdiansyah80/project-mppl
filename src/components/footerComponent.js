@@ -5,7 +5,7 @@ class footerCustom extends HTMLElement {
 
   render() {
     this.innerHTML = `
-            <footer class="mt-5 py-5 color1 text-white">
+            <footer class="mt-5 py-5 color1 text-white bg-primary">
             <div class="container">
             <div class="row">
                 <div class="footer-text col-md-5 text-center text-md-start">

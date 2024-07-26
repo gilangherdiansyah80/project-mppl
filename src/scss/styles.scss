@@ -4,9 +4,9 @@ $color_1: #9ca3af;
 $color_2: #2d2b2b;
 
 $background-color_1: #2A3C2E;
-$background-color_2: #669179d7;
+$background-color_2: #0d6efd;
 $background-color_3: #1AB15B;
-$background-color_4: #669179;
+$background-color_4: #0d6efd;
 
 $box-shadow-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
 
@@ -14,6 +14,8 @@ $box-shadow-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
 
 * {
     font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 /* Color pallete */
@@ -170,4 +172,8 @@ $box-shadow-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
 
 .carousel_responsive {
     margin-top: 20px;
+}
+
+.header {
+    max-width: 100%;
 }
