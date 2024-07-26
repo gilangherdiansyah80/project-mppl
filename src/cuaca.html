@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head-custom></head-custom>
+
+<body>
+    <div class="container">
+        <navbar-custom></navbar-custom>
+    </div>
+    <main class="card-margin">
+        <div class="container">
+            <div class="row height d-flex justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="form">
+                        <i class="bi bi-search"></i>
+                        <input id="search-loc" type="text" class="form-control form-input"
+                            placeholder="Search anything..." autocomplete="off">
+                    </div>
+                    <div id="search-results"></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="show-api" class="content container mt-5">
+            <h3><span class="me-2">Cuaca</span><i class="bi bi-cloud-moon"></i></h3>
+
+            <div id="search-results" class="card mb-3 text-white p-4 pb-0 card-weather">
+                <div class="card-body vertical row">
+                    <div class="col-5 border-cuaca" id="weather-related">
+                    </div>
+                    <div class="col-6 ms-4 horly-cuaca">
+                        <p class="bbottom">Hourly</p>
+                        <div class="cuaca-hourly row gap-3" id="cuaca-hourly">
+
+                        </div>
+                    </div>
+                </div>
+                <figure class="pt-5">
+                    <div class="blockquote-footer text-white">
+                        Data cuaca  oleh <a class="link-light" href="https://www.bmkg.go.id/" target="_blank">BMKG</a>.
+                    </div>
+                </figure>
+            </div>
+        </section>
+    </main>
+    <footer-custom></footer-custom>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+@import "~bootstrap/scss/bootstrap";
+
+$color_1: #9ca3af;
+$color_2: #2d2b2b;
+
+$background-color_1: #2A3C2E;
+$background-color_2: #669179d7;
+$background-color_3: #1AB15B;
+$background-color_4: #669179;
+
+$box-shadow-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+
+/* font style */
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Color pallete */
+.color1 {
+    background-color: $background-color_1;
+}
+
+.color2 {
+    background-color: $background-color_2;
+}
+
+.color3 {
+    background-color: $background-color_3;
+}
+
+.color2-blur {
+    background-color: $background-color_4;
+    filter: blur(5px);
+}
+
+// ==========search Components=========
+.form {
+    position: relative;
+
+    .bi-search {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        color: $color_1;
+    }
+
+    span {
+        position: absolute;
+        right: 17px;
+        top: 13px;
+        padding: 2px;
+        border-left: 1px solid #d1d5db;
+    }
+}
+
+// =========Cuaca Components==========
+
+.border-cuaca {
+    border-right: 3px solid white;
+}
+
+.form-input {
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+
+    &:focus {
+        box-shadow: none;
+        border: 1px solid black;
+    }
+}
+
+.card-landing-page {
+    box-shadow: $box-shadow-sm;
+}
+
+.bbottom {
+    border-bottom: 1px solid white;
+}
+
+.item-hourly {
+    p {
+        text-align: center;
+        color: $color_2;
+        font-weight: bold;
+        font-size: 9pt;
+    }
+}
+
+.day-weather {
+    img {
+        max-width: 250px;
+    }
+}
+
+.card-weather {
+    background-color: $background-color_4;
+    box-shadow: 10px 10px 37px -12px rgba(102, 145, 121, 1);
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.07);
+    }
+}
+
+#scrollable-container {
+    max-height: 650px;
+    /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+.hidden-description {
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.carousel-inner {
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.result-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0;
+}
+
+// ========= Bencana Components==========
+
+.title-bencana-home {
+    color: white;
+    text-decoration: none;
+}
+
+.title-bencana-home:hover {
+    color: black;
+    text-decoration: none;
+}
+
+// =========Scrollbar Weather Components==========
+.cuaca::-webkit-scrollbar {
+    width: 30px;
+}
+
+.cuaca::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.cuaca::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.cuaca::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+
+}
+
+.carousel_responsive {
+    margin-top: 20px;
+}

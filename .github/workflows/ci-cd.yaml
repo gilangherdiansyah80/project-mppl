@@ -1,0 +1,56 @@
+name: Push Changes on Success
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Installations
+      run: npm install
+
+    - name: Linting and End-to-End Testing
+      run: npm run lint
+
+    - name: Install Playwright browsers
+      run: npx playwright install
+      
+    - name: Install xvfb
+      run: sudo apt-get install -y xvfb
+    
+    - name: Run E2E tests with xvfb-run
+      run: xvfb-run npm run e2e
+
+    - name: Checkout Friend's Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'Arulkharisma/EcoSync' 
+        token: ${{ secrets.COBA3 }}
+
+    - name: Push Changes to Your Repository
+      if: success()
+      env:
+        SUPER_SECRET: ${{ secrets.COBA3 }}
+      run: |
+          git remote add other_repo https://github.com/gilangherdiansyah80/Project_Capstone_EcoSync.git
+          git fetch other_repo
+          git branch -r
+          git checkout main
+          git merge other_repo/main --allow-unrelated-histories -Xtheirs
+          git push origin main
