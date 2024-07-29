@@ -16,21 +16,21 @@ class NavbarCustom extends HTMLElement {
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
-                <ul class="navbar-nav gap-4">
+                <ul class="navbar-nav gap-6t">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                    <a class="nav-link text-light" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="cuaca.html">Cuaca</a>
+                    <a class="nav-link text-light" href="cuaca.html">Cuaca</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="detail-bencana.html">Bencana alam</a>
+                    <a class="nav-link text-light" href="detail-bencana.html">Bencana alam</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="donasi.html">Donasi</a>
+                    <a class="nav-link text-light" href="donasi.html">Donasi</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link text-light" href="aboutus.html">About Us</a>
                   </li>
                 </ul>
               </div>
