@@ -64,7 +64,7 @@ export default class Cuaca {
     </div>`;
 
     // Tampilkan cuaca wilayah terdekat
-    const cuacaData = await fetch(`https://ibnux.github.io/BMKG-importer/cuaca/${closestWilayah.id}.json`)
+    const cuacaData = await fetch(`https://ibnux.github.io/BMKG-importer/cuaca/wilayah.json`)
       .then((response) => response.json());
 
     const createWeatherCard = document.querySelector('#card-cuaca');
