@@ -8,8 +8,9 @@ class NavbarCustom extends HTMLElement {
     this.innerHTML = `
           <nav class="navbar navbar-expand-lg bg-primary">
             <div class="container-fluid px-lg-5">
-              <a href="#" class="navbar-brand">
-                <img class="w-50" src="./image/logo.png" alt="...">
+              <a href="#" class="navbar-brand" id="logo">
+                <img class="w-25" src="./image/logo.png" alt="...">
+                <h1>Tra<span class="text-light">Co</span></h1>
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

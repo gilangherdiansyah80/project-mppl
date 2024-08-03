@@ -8,12 +8,11 @@ class WeatherApp {
     this.inputElement = document.getElementById('search-loc');
     this.searchResults = document.getElementById('search-results');
     this.weatherRelated = document.getElementById('weather-related');
-    this.cuacaHourly = document.getElementById('cuaca-hourly');
     this.locData = [];
 
     this.getLocWeather();
     this.setupEventListeners();
-    this.getWeather(501212, 'Bandung, Kota Bandung, Indonesia');
+    this.getWeather('Bandung, Kota Bandung, Indonesia');
   }
 
   async getLocWeather() {
@@ -37,6 +36,10 @@ class WeatherApp {
   setupEventListeners() {
     this.inputElement.addEventListener('input', () => this.handleInput());
     document.addEventListener('click', (event) => this.handleClickOutsideResults(event));
+    this.formElement.addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.getWeather(this.inputElement.value);
+    });
   }
 
   handleInput() {
@@ -58,7 +61,6 @@ class WeatherApp {
       this.searchResults.innerHTML = locationsDataHTML;
       this.searchResults.style.display = 'block';
 
-      // Menambahkan event listener ke setiap elemen hasil pencarian
       const resultItems = this.searchResults.querySelectorAll('.result-item');
       resultItems.forEach((item) => {
         item.addEventListener('click', () => this.handleResultItemClick(item));
@@ -67,88 +69,38 @@ class WeatherApp {
   }
 
   handleResultItemClick(item) {
-    const selectedId = item.dataset.id;
     const selectedValue = item.innerText;
-    this.selectSuggestion(selectedId, selectedValue);
+    this.selectSuggestion(selectedValue);
   }
 
-  selectSuggestion(selectedId, selectedValue) {
+  selectSuggestion(selectedValue) {
     this.inputElement.value = selectedValue;
     this.searchResults.style.display = 'none';
 
-    // Memanggil fungsi getWeather dengan id dan nilai terpilih
-    this.getWeather(selectedId, selectedValue);
+    this.getWeather(selectedValue);
   }
 
-  async getWeather(idWilayah, wilayah) {
-    const spesficLocation = `https://ibnux.github.io/BMKG-importer/cuaca/${idWilayah}.json`;
-    this.searchResults.style.display = 'none';
-    this.inputElement.value = wilayah;
+  async getWeather(location) {
+    const apiKey = '1fe5f03e8b679377cbc41601289edfdd';
+    const spesficLocation = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
     try {
       const response = await fetch(spesficLocation);
       const data = await response.json();
 
-      this.weatherRelated.innerHTML = '';
-      this.cuacaHourly.innerHTML = '';
+      this.weatherRelated.innerHTML = `
+        <h2 style="margin-bottom: 15px;">${data.name}, ${data.sys.country}</h2>
+        <h5><span class="temp">${data.main.temp}°С</span> <span class="temp">${data.weather[0].description}</span></h5>
+        <p style="margin-bottom: 17px;">Temperature from ${data.main.temp_min}°С to ${data.main.temp_max}°С</p>
+        <h5>Wind Speed : ${data.wind.speed} m/s</h5>
+        <h5 style="margin-bottom: 17px;">Clouds : ${data.clouds.all}%</h5>
+        <h4 style="color: #ffff;">Geo Coordinates : [${data.coord.lat}, ${data.coord.lon}]</h4>
+      `;
 
-      for (let i = 0; i < data.length; i++) {
-        const element = data[i];
-        if (i === 1) {
-          this.weatherRelated.innerHTML = `
-            <h5 class="card-title text-black">${wilayah}</h5>
-            <p class="card-text">${this.formatTanggal(element.jamCuaca)} <br> Jam ${this.formatJam(element.jamCuaca)}</p>
-            <div class="row">
-              <div class="col-md-4">
-                <img src="https://ibnux.github.io/BMKG-importer/icon/${element.kodeCuaca}.png" alt="..." class="w-75" style="max-width: 100px;">
-                <p class="mt-4 ms-2">${element.cuaca}</p>
-              </div>
-              <div class="col-md-7 p-0">
-                <h1>${element.tempC}&deg;C</h1>
-                <p class="ms-4 mt-4 fs-5">60/80</p>
-              </div>
-            </div>
-          `;
-        }
-
-        this.cuacaHourly.innerHTML += `
-          <div class="col-md-2 item-hourly">
-            <p>${this.formatHari(element.jamCuaca)} ${this.formatJam(element.jamCuaca)}</p>
-            <img src="https://ibnux.github.io/BMKG-importer/icon/${element.kodeCuaca}.png" alt="" class="w-100">
-            <p class="mt-2">${element.tempC}&deg;C</p>
-          </div>
-        `;
-      }
+      this.inputElement.value = null;
     } catch (error) {
       console.error('Error:', error);
     }
-  }
-
-  formatTanggal(tanggal) {
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    };
-    const formattedDate = new Date(tanggal).toLocaleDateString('id-ID', options);
-    return formattedDate;
-  }
-
-  formatHari(tanggal) {
-    const options = { weekday: 'long' };
-    const formattedDate = new Date(tanggal).toLocaleDateString('id-ID', options);
-    return formattedDate;
-  }
-
-  formatJam(tanggal) {
-    const formattedTime = new Date(tanggal).toLocaleTimeString('en-US', {
-      hour12: false,
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
-    });
-    return formattedTime;
   }
 }
 

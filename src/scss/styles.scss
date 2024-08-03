@@ -178,3 +178,32 @@ $box-shadow-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
     max-width: 100%;
     color: white;
 }
+
+.temp {
+    background-color: $background-color_4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#weather-related {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#search-results {
+    background-image: url("../public/image/sky.jpg");
+}
+
+#card-cuaca {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    row-gap: 5px;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

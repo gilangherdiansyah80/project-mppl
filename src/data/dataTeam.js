@@ -39,10 +39,10 @@ const teamMembers = [
         name: 'Annisha Syaharani',
         id: '212350083',
         role: 'Sistem Design',
-        github: 'https://github.com/gilangherdiansyah80',
-        instagram: 'https://www.instagram.com/gilangherdiansyah.s/',
-        linkedin: 'https://www.linkedin.com/in/gilang-herdiansyah/',
-        image: './image/yogih.jpg',
+        github: 'https://github.com/annisaa10',
+        instagram: 'https://www.instagram.com/annisaa.10?igsh=NWlyMjliMW00OXo1&utm_source=qr',
+        linkedin: 'https://www.linkedin.com/in/annisa-syaharani-bb675a24b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        image: './image/anisa.jpg',
     },
 ];
 
