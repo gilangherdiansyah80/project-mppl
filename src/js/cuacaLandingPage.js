@@ -18,21 +18,12 @@ export default class Cuaca {
     let htmlContent = '';
 
     cuacaData.forEach((element) => {
-      htmlContent += `
-          <div class="cuaca-item card border-0 bg-transparent text-white" style="min-width: 250px;">
-            <div class="card-header bg-transparent border-0  ">
-              <h5>${element.jamCuaca}</h5>
-            </div>
-            <div class="card-body border-none color3 d-flex flex-column justify-content-around rounded-4 px-4 card-landing-page"
-              style="min-height: 170px;">
-              <div class="d-flex justify-content-around">
-                <img class="weather-icon" src="https://ibnux.github.io/BMKG-importer/icon/${element.kodeCuaca}.png" alt="" style="max-width: 60px;">
-                <p class="fs-3">${element.tempC}&deg; C</p>
-              </div>
-              <p>${element.cuaca}</p>
-            </div>
-          </div>
-        `;
+      htmlContent += `<h2 style="margin-bottom: 15px;">${element.name}, ${element.sys.country}</h2>
+                                <h5><span class="temp">${element.main.temp}°С</span> <span class="temp">${element.weather[0].description}</span></h5>
+                                <p style="margin-bottom: 17px;">Temperature from ${element.main.temp_min}°С to ${element.main.temp_max}°С</p>
+                                <h5>Wind Speed : ${element.wind.speed} m/s</h5>
+                                <h5 style="margin-bottom: 17px;">Clouds : ${element.clouds.all}%</h5>
+                                <h4 style="color: #012443;">Geo Coordinates : [${element.coord.lat}, ${element.coord.lon}]</h4>`
     });
 
     return htmlContent;
@@ -64,7 +55,7 @@ export default class Cuaca {
     </div>`;
 
     // Tampilkan cuaca wilayah terdekat
-    const cuacaData = await fetch(`https://ibnux.github.io/BMKG-importer/cuaca/wilayah.json`)
+    const cuacaData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${closestWilayah.kota}&appid=1fe5f03e8b679377cbc41601289edfdd&units=metric`)
       .then((response) => response.json());
 
     const createWeatherCard = document.querySelector('#card-cuaca');

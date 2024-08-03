@@ -33,7 +33,7 @@ const weatherModule = {
   },
 
   async getWeather(idWilayah, wilayah, cuacaElement, kodeCuacaElement, tempCElement, jamCuacaElement) {
-    const spesficLocation = `https://ibnux.github.io/BMKG-importer/cuaca/${idWilayah}.json`;
+    const spesficLocation = `https://ibnux.github.io/BMKG-importer/cuaca/wilayah/${idWilayah}.json`;
     searchResults.style.display = 'none';
     inputElement.value = wilayah;
 

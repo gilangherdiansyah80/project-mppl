@@ -1,7 +1,7 @@
 {
-  "name": "project_capstone_ecosync",
+  "name": "project_traco",
   "version": "1.0.0",
-  "description": "Repository ini berisi tentang project akhir capstone dengan tema Sumber Daya Alam, Ekosistem, dan Perubahan Iklim",
+  "description": "Repository ini berisi tentang tugas besar matakuliah manajemen proyek perangkat lunak dengan tema Sumber Daya Alam, Ekosistem, dan Perubahan Iklim",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",

@@ -22,9 +22,9 @@ const teamMembers = [
         id: '10121136',
         role: 'Programmer',
         github: 'https://github.com/gilangherdiansyah80',
-        instagram: 'https://www.linkedin.com/in/yogih-arahman-a41a60288/',
-        linkedin: 'https://www.linkedin.com/in/gilang-herdiansyah/',
-        image: './image/gilang.jpg',
+        instagram: 'https://www.instagram.com/_arahmannn/',
+        linkedin: 'https://www.linkedin.com/in/yogih-arahman-a41a60288/',
+        image: './image/yogih.jpg',
     },
     {
         name: 'Gilang Herdiansyah Saputra',
@@ -42,7 +42,7 @@ const teamMembers = [
         github: 'https://github.com/gilangherdiansyah80',
         instagram: 'https://www.instagram.com/gilangherdiansyah.s/',
         linkedin: 'https://www.linkedin.com/in/gilang-herdiansyah/',
-        image: './image/gilang.jpg',
+        image: './image/yogih.jpg',
     },
 ];
 

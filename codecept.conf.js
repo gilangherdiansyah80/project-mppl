@@ -13,12 +13,12 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'https://ecosync.vercel.app/',
+      url: 'https://traco.vercel.app/',
       show: true
     }
   },
   include: {
     I: './steps_file.js'
   },
-  name: 'Project_Capstone_EcoSync'
+  name: 'Project_MPPL'
 }
