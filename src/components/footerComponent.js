@@ -26,7 +26,7 @@ class footerCustom extends HTMLElement {
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-phone" style="font-size:24px"></i>
-                                <p>+62855648139</p>
+                                <p>+6285866244363</p>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ class footerCustom extends HTMLElement {
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-whatsapp" style="color: white; font-size:24px"></i>
-                                <p>+62855648139</p>
+                                <p>+6285866244363</p>
                             </div>
                             <div class="d-flex gap-3">
                                 <i class="fa fa-youtube" style="color: white; font-size:24px"></i>
