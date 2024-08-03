@@ -26,7 +26,7 @@ const generateTeamMemberCard = (member) => {
 
     const title = createHTMLElement('h5', {
         className: 'card-title text-center',
-        style: 'color: #1ab15b;',
+        style: 'color: #0d6efd;',
         textContent: member.name,
     });
 
